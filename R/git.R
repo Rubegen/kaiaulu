@@ -199,3 +199,30 @@ git_delete_sample_log <- function(folder_path="/tmp"){
                    stdout = TRUE,
                    stderr = FALSE)
 }
+
+io_make_sample_file <- function(save_filepath,body) {
+
+  error <- system2('echo',
+                   args = c("\"print('hello world!')\"",
+                            '>',
+                            file_path),
+                   stdout = TRUE,
+                   stderr = FALSE)
+
+  # Create cmd
+  cmd <- paste("echo", shQuote(body), ">", shQuote(save_filepath))
+
+  # Execute the command using system2
+  result <- system2(cmd, stdout = TRUE, stderr = FALSE)
+
+
+}
+
+
+
+
+
+
+
+
+
